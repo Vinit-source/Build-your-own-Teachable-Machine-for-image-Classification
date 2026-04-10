@@ -1,0 +1,97 @@
+/*
+  IN-CODE REFERENCE (Page #6 style focus)
+  - Goal: keep webcam, status, and controls visually clear.
+  - This file prioritizes readability and interaction over heavy design.
+  - Checkpoint: students should be able to find status, video, and buttons instantly.
+*/
+
+/* Global page baseline used throughout the activity. */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 2rem;
+  color: #1f2937;
+  background: #f7fafc;
+}
+
+/* Constrain content width for easier reading on desktop. */
+main {
+  max-width: 980px;
+}
+
+/* Page #5 visual hierarchy: title should stand out from control text. */
+h1 {
+  font-style: italic;
+  color: #ff6f00;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle should stay close to title but separate from status updates. */
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/*
+  Status panel is a key checkpoint element.
+  It shows: model load state, class counts, training state, and predictions.
+*/
+#status {
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+}
+
+/*
+  Webcam panel dimensions align with capture constraints in script.js (640x480).
+  max-width keeps it responsive on smaller screens.
+*/
+video {
+  display: block;
+  width: 640px;
+  height: 480px;
+  max-width: 100%;
+  background: #000000;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+/* Control row wraps so all actions stay reachable on narrow layouts. */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Neutral button style keeps attention on ML behavior, not visual effects. */
+button {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f3f4f6;
+}
+
+/* Page #10 behavior: enable button is hidden once webcam stream is ready. */
+.removed {
+  display: none;
+}
+
+/* Student notes box supports in-repo guidance without external docs. */
+.notes {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.notes h2 {
+  margin-top: 0;
+}

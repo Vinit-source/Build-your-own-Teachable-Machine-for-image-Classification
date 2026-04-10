@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--
+      IN-CODE REFERENCE (Pages #4-#6)
+      - Page #4: Run from a local server (localhost), not file protocol.
+      - Page #5: This file provides the full app scaffold for webcam + controls.
+      - Page #6: style.css keeps layout readable and webcam area visible.
+    -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teachable Machine Clone - Transfer Learning with TensorFlow.js</title>
+    <!-- Page #6: visual layout and usability styles -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Page #5: high-level page title for transfer-learning demo -->
+      <h1>Build Your Own Teachable Machine (TensorFlow.js)</h1>
+      <p class="subtitle">
+        Classroom starter for transfer learning with MobileNet features and a custom classifier head.
+      </p>
+
+      <!-- Page #5 checkpoint: status should change as model loads, data gathers, and predictions run -->
+      <p id="status">Awaiting TensorFlow.js load...</p>
+
+      <!-- Page #5: live webcam stream target used by script.js preprocessing pipeline -->
+      <video id="webcam" autoplay muted playsinline></video>
+
+      <!--
+        Page #5: control surface
+        - enableCam: starts webcam stream
+        - dataCollector buttons: hold to gather class samples
+        - train: fits classifier head
+        - reset: disposes collected tensors and clears sample state
+      -->
+      <section class="controls">
+        <button id="enableCam">Enable Webcam</button>
+        <button class="dataCollector" data-1hot="0" data-name="Class 1">Gather Class 1 Data</button>
+        <button class="dataCollector" data-1hot="1" data-name="Class 2">Gather Class 2 Data</button>
+        <button id="train">Train and Predict</button>
+        <button id="reset">Reset</button>
+      </section>
+
+      <!--
+        In-repo learner prompts:
+        - Step 8 (guided): implement base-model load and warm-up in script.js
+        - Step 9 (scaffolded): verify model.summary() after filling head params
+        - Step 13: understand one-hot targets and training purpose
+      -->
+      <section class="notes">
+        <h2>Student Notes</h2>
+        <ol>
+          <li>Complete Step 8 in <code>script.js</code> to load MobileNet from TFHub.</li>
+          <li>Complete Step 9 model head blanks in <code>script.js</code>.</li>
+          <li>Use <code>model.summary()</code> to verify your architecture before training.</li>
+        </ol>
+      </section>
+    </main>
+
+    <!-- Page #4/#5: TensorFlow.js runtime dependency -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js" type="text/javascript"></script>
+    <!-- Pages #7-#14: core app logic, checkpoints, and in-code codelab reference -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
